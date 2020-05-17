@@ -64,7 +64,6 @@ export default class Publications extends Component {
     }
 
     componentWillReceiveProps(props) {
-        console.log(`PUBLICATIONS`, props, this.state);
         if(props.search !== this.state.search || props.country !== this.state.country) {
             this.setState({ 
                 search: props.search, 
