@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
-import { api, headers } from '../../constants';
+import { api, headers } from '../../../constants';
 
 import {
     ListItemAvatar,
 } from '@material-ui/core';
 
-import FlagIcon from '../Common/Flag/FlagIcon';
+import FlagIcon from '../../Common/Flag/FlagIcon';
 
-import InfiniteScroll from "../Common/List/InfiniteScroll";
+import InfiniteScroll from "../../Common/List/InfiniteScroll";
 
-export default class KeywordCountries extends Component {
+export default class CountryList extends Component {
     
     state = {
         countries: [],

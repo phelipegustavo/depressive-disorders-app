@@ -1,7 +1,15 @@
-.flag-icon-ex1 {
+.flag-icon-xk {
     background-image: url(./images/1x1/xk.svg);
 }
 
-.flag-icon-ex1.flag-icon-squared {
+.flag-icon-xk.flag-icon-squared {
     background-image: url(./images/1x1/xk.svg);
+}
+
+.flag-icon-an {
+    background-image: url(./images/1x1/an.svg);
+}
+
+.flag-icon-an.flag-icon-squared {
+    background-image: url(./images/1x1/an.svg);
 }

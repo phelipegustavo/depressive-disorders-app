@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { api, headers } from '../../constants';
+import { api, headers } from '../../../constants';
 
-import InfiniteScroll from '../Common/List/InfiniteScroll';
+import InfiniteScroll from '../../Common/List/InfiniteScroll';
 
 export default class KeywordList extends Component {
 

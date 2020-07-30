@@ -2,33 +2,32 @@ import React from 'react';
 import FlagIcon from '../Common/Flag/FlagIcon';
 
 import { 
-    withScriptjs,
-    withGoogleMap,
-    GoogleMap,
-    Marker, 
-    InfoWindow
+	withScriptjs,
+	withGoogleMap,
+	GoogleMap,
+	Marker, 
+	InfoWindow
 } from "react-google-maps"
 
 const { compose, withStateHandlers } = require("recompose");
 
 export default compose(
 	withStateHandlers((props) => ({
-        options: {
-            minZoom: 2,
-            maxZoom: 6,
-        },
-        zoom: 2,
+		options: {
+			minZoom: 2,
+			maxZoom: 6,
+		},
+		zoom: 2,
 		center: {
 			lat: 0,
 			lng: 0
-        },
-	}), {
-	}),
+		},
+	}), {}),
 	withScriptjs,
 	withGoogleMap
 	)(props => (
 	<GoogleMap
-        options={props.options}
+		options={props.options}
 		defaultZoom={props.zoom}
 		defaultCenter={props.center}>
 		{props.markers.map(country => (
@@ -38,7 +37,7 @@ export default compose(
 				label={{fontSize: '10px', fontWeight: '600', color: '#fff', text: country.count.toString()}} 
 				onClick={(e) => props.select(e, country)}>
 					{props.country && props.country._id === country._id && 
-                    <InfoWindow onCloseClick={props.select}>
+						<InfoWindow onCloseClick={props.select}>
 						<div> 
 							<span>{ country.code && <FlagIcon code={country.code} />}</span>
 							<span style={{ margin: '0 10px' }}>{ country.name } ({country.count})</span>

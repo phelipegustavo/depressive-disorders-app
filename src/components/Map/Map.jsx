@@ -109,15 +109,16 @@ export default function Map() {
     const selectCountry = async (e, newContry=false) => {
         let keywords = [];
         if(newContry && newContry._id && newContry !== country) {
-            keywords = await getKeywords(newContry);
+            const data = await getKeywords(newContry);
+            keywords = data.keywords;
             setKeywords(keywords);
         }
         setShowPublications(matches);
         setCountry(newContry);
     }
 
-    const getKeywords = async ({_id}) => {
-        const url = api(`countries/${_id}/keywords`, {
+    const getKeywords = async ({code}) => {
+        const url = api(`countries/${code.toUpperCase()}/keywords`, {
             perPage: 5,
             page: 1,
         })
